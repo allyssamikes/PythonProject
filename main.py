@@ -1,16 +1,42 @@
-# This is a sample Python script.
+class Calculator:
+    def add(self, num1, num2):
+        return num1 + num2
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+    def subtract(self, num1, num2):
+        return num1 - num2
+
+    def multiply(self, num1, num2):
+        return num1 * num2
+
+    def divide(self, num1, num2):
+        return num1 / num2
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def getDouble(message):
+    return float(input(message + ": "))
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('Allyssa')
+def getString(message):
+    return input(message + ": ")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+calc = Calculator()
+check = True
+while check == True:
+    num1 = getDouble("Enter a number")
+    num2 = getDouble("Enter another number")
+    print("You want to add", format(num1, ".2f"), "and", format(num2, ".2f"))
+    print("Answer:", calc.add(num1, num2))
+    print("You want to subtract", format(num1, ".2f"), "and", format(num2, ".2f"))
+    print("Answer:", calc.subtract(num1, num2))
+    print("You want to multiply", format(num1, ".2f"), "and", format(num2, ".2f"))
+    print("Answer:", calc.multiply(num1, num2))
+    print("You want to divide", format(num1, ".2f"), "and", format(num2, ".2f"))
+    print("Answer:", calc.divide(num1, num2))
+    input()
+    answer = getString("Would you like to continue? y/n")
+    if answer == "y":
+        continue
+    else:
+        print("Goodbye")
+        check = False
